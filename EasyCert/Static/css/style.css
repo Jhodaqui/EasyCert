@@ -1,0 +1,136 @@
+body {
+    background-color: #f5f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.login-box {
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: none;
+    background: #e5e5e5;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-admin {
+    background-color: #003f4f;
+}
+
+.btn-asesor {
+    background-color: #004d61;
+}
+
+/* Style main */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* opcional, para contraste */
+}
+
+.login-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 400px; /* tamaño fijo más compacto */
+    text-align: center;
+}
+.login-box input,
+
+.login-box select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e5e5e5;
+    box-sizing: border-box;
+}
+
+/* logo styles */
+.logo{
+    width: 80px;       /* ajusta el tamaño que quieras */
+    height: 80px;      /* debe ser igual al width para que quede circular */
+    border-radius: 50%;
+    object-fit: cover; /* para que no se deforme */
+}
+.logo{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* estilos del modal */
+  
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal-content img {
+            width: 50px;
+            margin: 10px 0;
+        }
+        .modal-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1b4d5c;
+            color: white;
+            cursor: pointer;
+        }
+        .modal-btn:first-child {
+            background-color: #2a7d8c;
+        }
