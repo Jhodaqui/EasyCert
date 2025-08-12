@@ -75,14 +75,12 @@ WSGI_APPLICATION = 'mainSecop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME':'certificacionesfunciona',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://quirajh:12345@certificacionesfunciona.ouyovrc.mongodb.net/',
-            'retryWrites': True,
-            'w': 'majority'
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'certificaciones',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
