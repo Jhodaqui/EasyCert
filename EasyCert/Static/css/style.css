@@ -41,13 +41,12 @@ button {
     cursor: pointer;
 }
 
-.btn-admin {
+.btn-admin,
+.btn-asesor,
+.btn-regresar {
     background-color: #003f4f;
 }
 
-.btn-asesor {
-    background-color: #004d61;
-}
 
 /* Style main */
 .login-container {
@@ -80,15 +79,15 @@ button {
 
 /* logo styles */
 .logo{
-    width: 80px;       /* ajusta el tamaño que quieras */
-    height: 80px;      /* debe ser igual al width para que quede circular */
-    border-radius: 50%;
+    width: 120px;       /* ajusta el tamaño que quieras */
+    height: 120px;      /* debe ser igual al width para que quede circular */
+    border-radius: 70%;
     object-fit: cover; /* para que no se deforme */
 }
 .logo{
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
