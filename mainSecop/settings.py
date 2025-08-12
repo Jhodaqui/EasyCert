@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'mainSecop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME':'certificacionesfunciona',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://quirajh:12345@certificacionesfunciona.ouyovrc.mongodb.net/',
+            'retryWrites': True,
+            'w': 'majority'
+        }
     }
 }
 
