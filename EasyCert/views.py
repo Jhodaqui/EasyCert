@@ -3,6 +3,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from .models import Usuario, Contrato, ArchivoUsuario
+from .serializers import UsuarioSerializer, ContratoSerializer, ArchivoUsuarioSerializer
+
 # Create your views here.
 
 # Solicitantes main
@@ -42,3 +47,20 @@ def login_view(request):
             messages.error(request, 'Credenciales incorrectas')
 
     return render(request, 'login.html')
+
+#  views probando backends
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+    permission_classes = [IsAuthenticated]
+
+class ContratoViewSet(viewsets.ModelViewSet):
+    queryset = Contrato.objects.all()
+    serializer_class = ContratoSerializer
+    permission_classes = [IsAuthenticated]
+
+class ArchivoUsuarioViewSet(viewsets.ModelViewSet):
+    queryset = ArchivoUsuario.objects.all()
+    serializer_class = ArchivoUsuarioSerializer
+    permission_classes = [IsAuthenticated]
