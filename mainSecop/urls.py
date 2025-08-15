@@ -27,6 +27,9 @@ urlpatterns = [
     path('api/', include('EasyCert.urls')),
     path('', views.solicitud_constancia, name='solicitud'),
     path('login/', views.login_view, name='login'),
+    path('usuario/nuevo/', views.registro_usuario, name='registro_usuario'),
+    path('contrato/nuevo/', views.registrar_contrato, name='registrar_contrato'),
+    path('archivo/nuevo/', views.subir_archivo, name='subir_archivo'),
 
     #JWT
     path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

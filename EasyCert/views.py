@@ -1,7 +1,7 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .forms import RegistroUsuarioForm, ContratoForm, ArchivoUsuarioForm
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
@@ -9,6 +9,40 @@ from .models import Usuario, Contrato, ArchivoUsuario
 from .serializers import UsuarioSerializer, ContratoSerializer, ArchivoUsuarioSerializer
 
 # Create your views here.
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Aquí puedes redirigir a otra página o mostrar mensaje
+            return redirect('login')
+    else:
+        form = RegistroUsuarioForm()
+
+    # Renderizamos tu plantilla main.html con el formulario
+    return render(request, 'main.html', {'form': form})
+
+def registrar_contrato(request):
+    if request.method == "POST":
+        form = ContratoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ContratoForm()
+    return render(request, 'registrar_contrato.html', {'form': form})
+
+def subir_archivo(request):
+    if request.method == "POST":
+        form = ArchivoUsuarioForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ArchivoUsuarioForm()
+    return render(request, 'subir_archivo.html', {'form': form})
+# forms
+
 
 # Solicitantes main
 
